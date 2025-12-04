@@ -10,116 +10,123 @@ class MockDataService {
   MockDataService._internal();
 
   // Mock movies using the poster assets
-  final List<MovieModel> _movies = [
-    MovieModel(
-      title: "The Shawshank Redemption",
-      year: "1994",
-      imdbID: "tt0111161",
-      type: "movie",
-      poster: "assets/poster1.jpg",
-    ),
-    MovieModel(
-      title: "The Godfather",
-      year: "1972",
-      imdbID: "tt0068646",
-      type: "movie",
-      poster: "assets/poster2.jpg",
-    ),
-    MovieModel(
-      title: "The Dark Knight",
-      year: "2008",
-      imdbID: "tt0468569",
-      type: "movie",
-      poster: "assets/poster3.jpg",
-    ),
-    MovieModel(
-      title: "Pulp Fiction",
-      year: "1994",
-      imdbID: "tt0110912",
-      type: "movie",
-      poster: "assets/poster4.jpg",
-    ),
-    MovieModel(
-      title: "Fight Club",
-      year: "1999",
-      imdbID: "tt0137523",
-      type: "movie",
-      poster: "assets/poster5.jpg",
-    ),
+  // Mapping: poster1=Inception, poster2=La La Land, poster3=The Martian, 
+  // poster4=Interstellar, poster5=The Dark Knight, poster6=Tenet, 
+  // poster7=Frozen, poster8=Moana, poster9=Coco, poster10=Avengers Endgame,
+  // poster11=Guardians of the Galaxy, poster12=Doctor Strange, 
+  // poster13=Dune, poster14=Oppenheimer, poster15=Grand Budapest Hotel,
+  // poster16=The Hunger Games
+  // Note: This list is mutable to allow adding movies from API
+  final List<MovieModel> _movies = <MovieModel>[
     MovieModel(
       title: "Inception",
       year: "2010",
       imdbID: "tt1375666",
       type: "movie",
-      poster: "assets/poster6.jpg",
+      poster: "assets/poster1.jpg",
     ),
     MovieModel(
-      title: "The Matrix",
-      year: "1999",
-      imdbID: "tt0133093",
+      title: "La La Land",
+      year: "2016",
+      imdbID: "tt3783958",
       type: "movie",
-      poster: "assets/poster7.jpg",
+      poster: "assets/poster2.jpg",
     ),
     MovieModel(
-      title: "Goodfellas",
-      year: "1990",
-      imdbID: "tt0099685",
+      title: "The Martian",
+      year: "2015",
+      imdbID: "tt3659388",
       type: "movie",
-      poster: "assets/poster8.jpg",
+      poster: "assets/poster3.jpg",
     ),
     MovieModel(
       title: "Interstellar",
       year: "2014",
       imdbID: "tt0816692",
       type: "movie",
+      poster: "assets/poster4.jpg",
+    ),
+    MovieModel(
+      title: "The Dark Knight",
+      year: "2008",
+      imdbID: "tt0468569",
+      type: "movie",
+      poster: "assets/poster5.jpg",
+    ),
+    MovieModel(
+      title: "Tenet",
+      year: "2020",
+      imdbID: "tt6723592",
+      type: "movie",
+      poster: "assets/poster6.jpg",
+    ),
+    MovieModel(
+      title: "Frozen",
+      year: "2013",
+      imdbID: "tt2294629",
+      type: "movie",
+      poster: "assets/poster7.jpg",
+    ),
+    MovieModel(
+      title: "Moana",
+      year: "2016",
+      imdbID: "tt3521164",
+      type: "movie",
+      poster: "assets/poster8.jpg",
+    ),
+    MovieModel(
+      title: "Coco",
+      year: "2017",
+      imdbID: "tt2380307",
+      type: "movie",
       poster: "assets/poster9.jpg",
     ),
     MovieModel(
-      title: "The Lord of the Rings: The Fellowship",
-      year: "2001",
-      imdbID: "tt0120737",
+      title: "Avengers: Endgame",
+      year: "2019",
+      imdbID: "tt4154796",
       type: "movie",
       poster: "assets/poster10.jpg",
     ),
     MovieModel(
-      title: "Forrest Gump",
-      year: "1994",
-      imdbID: "tt0109830",
+      title: "Guardians of the Galaxy",
+      year: "2014",
+      imdbID: "tt2015381",
       type: "movie",
       poster: "assets/poster11.jpg",
     ),
     MovieModel(
-      title: "The Silence of the Lambs",
-      year: "1991",
-      imdbID: "tt0102926",
+      title: "Doctor Strange",
+      year: "2016",
+      imdbID: "tt1211837",
       type: "movie",
       poster: "assets/poster12.jpg",
     ),
     MovieModel(
-      title: "Saving Private Ryan",
-      year: "1998",
-      imdbID: "tt0120815",
+      title: "Dune",
+      year: "2021",
+      imdbID: "tt1160419",
       type: "movie",
       poster: "assets/poster13.jpg",
     ),
     MovieModel(
-      title: "The Green Mile",
-      year: "1999",
-      imdbID: "tt0120689",
+      title: "Oppenheimer",
+      year: "2023",
+      imdbID: "tt15398776",
       type: "movie",
       poster: "assets/poster14.jpg",
     ),
     MovieModel(
-      title: "Gladiator",
-      year: "2000",
-      imdbID: "tt0172495",
+      title: "The Grand Budapest Hotel",
+      year: "2014",
+      imdbID: "tt2278388",
       type: "movie",
       poster: "assets/poster15.jpg",
     ),
     MovieModel(
-      title: "The Departed",
-      year: "2006",
-      imdbID: "tt0407887",
+      title: "The Hunger Games",
+      year: "2012",
+      imdbID: "tt1392170",
       type: "movie",
       poster: "assets/poster16.jpg",
     ),
@@ -144,7 +151,7 @@ class MockDataService {
         reviewIds: ["rev1", "rev2", "rev3"],
         bio: "Passionate about classic cinema and storytelling",
         avatar: "assets/friend.png",
-        topMovieIds: ["tt0111161", "tt0068646", "tt0468569"],
+        topMovieIds: ["tt1375666", "tt0816692", "tt0468569"], // Inception, Interstellar, The Dark Knight
       ),
       UserModel(
         id: "user2",
@@ -153,7 +160,7 @@ class MockDataService {
         reviewIds: ["rev4", "rev5", "rev6", "rev7"],
         bio: "Professional film critic with 10+ years of experience",
         avatar: "assets/friend.png",
-        topMovieIds: ["tt0137523", "tt1375666", "tt0110912"],
+        topMovieIds: ["tt6723592", "tt3783958", "tt4154796"], // Tenet, La La Land, Avengers Endgame
       ),
       UserModel(
         id: "user3",
@@ -162,7 +169,7 @@ class MockDataService {
         reviewIds: ["rev8", "rev9"],
         bio: "Love exploring different genres and hidden gems",
         avatar: "assets/friend.png",
-        topMovieIds: ["tt0133093", "tt0099685", "tt0816692"],
+        topMovieIds: ["tt2015381", "tt1211837", "tt3659388"], // Guardians, Doctor Strange, The Martian
       ),
       UserModel(
         id: "user4",
@@ -171,7 +178,7 @@ class MockDataService {
         reviewIds: ["rev10", "rev11", "rev12"],
         bio: "Documentary filmmaker and movie enthusiast",
         avatar: "assets/friend.png",
-        topMovieIds: ["tt0120737", "tt0109830", "tt0102926"],
+        topMovieIds: ["tt1160419", "tt15398776", "tt2278388"], // Dune, Oppenheimer, Grand Budapest Hotel
       ),
       UserModel(
         id: "user5",
@@ -180,139 +187,145 @@ class MockDataService {
         reviewIds: ["rev13", "rev14", "rev15", "rev16"],
         bio: "Sharing my thoughts on the latest releases",
         avatar: "assets/friend.png",
-        topMovieIds: ["tt0120815", "tt0120689", "tt0172495"],
+        topMovieIds: ["tt2294629", "tt3521164", "tt2380307"], // Frozen, Moana, Coco
       ),
     ]);
 
     // Initialize reviews with timestamps
+    // All reviews now use the 16 provided movies with correct titles and posters
     final now = DateTime.now();
     _reviews.addAll([
+      // user1 reviews: Inception, Interstellar, The Dark Knight
       ReviewModel(
         id: "rev1",
         rating: 5,
-        comment: "An absolute masterpiece! The storytelling and character development are unparalleled.",
+        comment: "Nolan's masterpiece! The concept of dreams within dreams is brilliantly executed. A mind-bending experience.",
         userId: "user1",
-        movieId: "tt0111161",
+        movieId: "tt1375666", // Inception
         createdAt: now.subtract(const Duration(days: 2)),
       ),
       ReviewModel(
         id: "rev2",
         rating: 5,
-        comment: "The Godfather remains one of the greatest films ever made. Brando's performance is legendary.",
+        comment: "Absolutely stunning visuals and emotional depth. The space sequences are breathtaking and the score is unforgettable.",
         userId: "user1",
-        movieId: "tt0068646",
+        movieId: "tt0816692", // Interstellar
         createdAt: now.subtract(const Duration(days: 5)),
       ),
       ReviewModel(
         id: "rev3",
         rating: 5,
-        comment: "Heath Ledger's Joker is iconic. This film redefined what a superhero movie could be.",
+        comment: "Heath Ledger's Joker is iconic. This film redefined what a superhero movie could be. Perfect blend of action and drama.",
         userId: "user1",
-        movieId: "tt0468569",
+        movieId: "tt0468569", // The Dark Knight
         createdAt: now.subtract(const Duration(days: 7)),
       ),
+      // user2 reviews: Tenet, La La Land, The Martian, Avengers Endgame
       ReviewModel(
         id: "rev4",
         rating: 4,
-        comment: "Fight Club is a mind-bending experience. The twist still gets me every time.",
+        comment: "Complex and visually stunning. Nolan pushes boundaries again with time inversion. Requires multiple viewings to fully appreciate.",
         userId: "user2",
-        movieId: "tt0137523",
+        movieId: "tt6723592", // Tenet
         createdAt: now.subtract(const Duration(hours: 12)),
       ),
       ReviewModel(
         id: "rev5",
         rating: 5,
-        comment: "Nolan's best work. The concept of dreams within dreams is brilliantly executed.",
+        comment: "Pure cinematic magic! The musical numbers are beautiful, and the chemistry between Gosling and Stone is electric.",
         userId: "user2",
-        movieId: "tt1375666",
+        movieId: "tt3783958", // La La Land
         createdAt: now.subtract(const Duration(days: 1)),
       ),
       ReviewModel(
         id: "rev6",
         rating: 5,
-        comment: "Tarantino at his finest. The dialogue, the structure, everything is perfect.",
+        comment: "Matt Damon is fantastic as Mark Watney. The perfect blend of science, humor, and survival. A thrilling ride from start to finish.",
         userId: "user2",
-        movieId: "tt0110912",
+        movieId: "tt3659388", // The Martian
         createdAt: now.subtract(const Duration(days: 3)),
       ),
       ReviewModel(
         id: "rev7",
-        rating: 4,
-        comment: "A great film, though I prefer some of Tarantino's other works.",
+        rating: 5,
+        comment: "The perfect conclusion to an epic saga. Emotional, action-packed, and deeply satisfying. The final battle is legendary.",
         userId: "user2",
-        movieId: "tt0110912",
+        movieId: "tt4154796", // Avengers: Endgame
         createdAt: now.subtract(const Duration(days: 4)),
       ),
+      // user3 reviews: Guardians of the Galaxy, Doctor Strange
       ReviewModel(
         id: "rev8",
         rating: 5,
-        comment: "The Matrix changed cinema forever. The visual effects were groundbreaking.",
+        comment: "Fun, quirky, and absolutely hilarious! The soundtrack is perfect, and the characters are instantly lovable. Pure entertainment.",
         userId: "user3",
-        movieId: "tt0133093",
+        movieId: "tt2015381", // Guardians of the Galaxy
         createdAt: now.subtract(const Duration(hours: 6)),
       ),
       ReviewModel(
         id: "rev9",
         rating: 5,
-        comment: "Scorsese's masterpiece. The long take in the Copacabana is pure cinema.",
+        comment: "Mind-bending visuals and a fantastic origin story. Cumberbatch is perfect as Strange. The magic sequences are breathtaking.",
         userId: "user3",
-        movieId: "tt0099685",
+        movieId: "tt1211837", // Doctor Strange
         createdAt: now.subtract(const Duration(days: 6)),
       ),
+      // user4 reviews: Dune, Oppenheimer, Grand Budapest Hotel
       ReviewModel(
         id: "rev10",
         rating: 5,
-        comment: "Epic fantasy done right. The world-building is incredible.",
+        comment: "Epic sci-fi done right. The world-building is incredible, and the cinematography is absolutely stunning. Can't wait for part two!",
         userId: "user4",
-        movieId: "tt0120737",
+        movieId: "tt1160419", // Dune
         createdAt: now.subtract(const Duration(hours: 18)),
       ),
       ReviewModel(
         id: "rev11",
         rating: 5,
-        comment: "Tom Hanks delivers one of his best performances. A heartwarming story.",
+        comment: "Nolan's masterful storytelling meets historical drama. Cillian Murphy's performance is powerful, and the score is haunting.",
         userId: "user4",
-        movieId: "tt0109830",
+        movieId: "tt15398776", // Oppenheimer
         createdAt: now.subtract(const Duration(days: 8)),
       ),
       ReviewModel(
         id: "rev12",
         rating: 5,
-        comment: "Thrilling and intense. Hopkins as Hannibal Lecter is unforgettable.",
+        comment: "Wes Anderson at his finest. Quirky, charming, and beautifully shot. The production design is a work of art.",
         userId: "user4",
-        movieId: "tt0102926",
+        movieId: "tt2278388", // The Grand Budapest Hotel
         createdAt: now.subtract(const Duration(days: 9)),
       ),
+      // user5 reviews: Frozen, Moana, Coco, The Hunger Games
       ReviewModel(
         id: "rev13",
         rating: 5,
-        comment: "The opening sequence alone is worth the watch. Spielberg's war epic.",
+        comment: "Let it go, let it go! A beautiful story about sisterhood and self-discovery. The songs are absolutely iconic.",
         userId: "user5",
-        movieId: "tt0120815",
+        movieId: "tt2294629", // Frozen
         createdAt: now.subtract(const Duration(hours: 3)),
       ),
       ReviewModel(
         id: "rev14",
         rating: 5,
-        comment: "Emotional and powerful. Tom Hanks and Michael Clarke Duncan are incredible.",
+        comment: "Stunning animation and a powerful story about finding your own path. Moana is a fantastic character, and the music is wonderful.",
         userId: "user5",
-        movieId: "tt0120689",
+        movieId: "tt3521164", // Moana
         createdAt: now.subtract(const Duration(days: 10)),
       ),
       ReviewModel(
         id: "rev15",
-        rating: 4,
-        comment: "Russell Crowe is fantastic. The action sequences are epic.",
+        rating: 5,
+        comment: "Emotional and beautiful. A heartwarming celebration of family and tradition. The animation is vibrant and the music is incredible.",
         userId: "user5",
-        movieId: "tt0172495",
+        movieId: "tt2380307", // Coco
         createdAt: now.subtract(const Duration(days: 11)),
       ),
       ReviewModel(
         id: "rev16",
         rating: 5,
-        comment: "One of Scorsese's best. The tension and performances are top-notch.",
+        comment: "Jennifer Lawrence is fantastic as Katniss. A thrilling adaptation with great action sequences and emotional depth.",
         userId: "user5",
-        movieId: "tt0407887",
+        movieId: "tt1392170", // The Hunger Games
         createdAt: now.subtract(const Duration(hours: 9)),
       ),
     ]);
@@ -356,12 +369,27 @@ class MockDataService {
     );
   }
 
-  // Get movie by ID
+  // Get movie by ID - returns null if not found instead of first movie
   MovieModel? getMovieById(String movieId) {
-    return movies.firstWhere(
-      (movie) => movie.imdbID == movieId,
-      orElse: () => movies.first,
-    );
+    try {
+      return movies.firstWhere(
+        (movie) => movie.imdbID == movieId,
+      );
+    } catch (e) {
+      return null;
+    }
+  }
+
+  // Add or update a movie (used when fetching from API)
+  void addOrUpdateMovie(MovieModel movie) {
+    final index = _movies.indexWhere((m) => m.imdbID == movie.imdbID);
+    if (index >= 0) {
+      // Update existing movie
+      _movies[index] = movie;
+    } else {
+      // Add new movie
+      _movies.add(movie);
+    }
   }
 
   // Get reviews by user ID
@@ -399,6 +427,140 @@ class MockDataService {
         .map((movieId) => getMovieById(movieId))
         .whereType<MovieModel>()
         .toList();
+  }
+
+  // Add a friend to a user
+  Future<bool> addFriend(String userId, String friendId) async {
+    if (userId == friendId) return false; // Can't add yourself
+    
+    final userIndex = _users.indexWhere((u) => u.id == userId);
+    if (userIndex == -1) return false;
+    
+    final user = _users[userIndex];
+    if (user.friends.contains(friendId)) return false; // Already a friend
+    
+    // Create new user with added friend
+    final updatedUser = UserModel(
+      id: user.id,
+      username: user.username,
+      friends: [...user.friends, friendId],
+      reviewIds: user.reviewIds,
+      avatar: user.avatar,
+      bio: user.bio,
+      topMovieIds: user.topMovieIds,
+    );
+    
+    _users[userIndex] = updatedUser;
+    return true;
+  }
+
+  // Remove a friend from a user
+  Future<bool> removeFriend(String userId, String friendId) async {
+    final userIndex = _users.indexWhere((u) => u.id == userId);
+    if (userIndex == -1) return false;
+    
+    final user = _users[userIndex];
+    if (!user.friends.contains(friendId)) return false; // Not a friend
+    
+    // Create new user with removed friend
+    final updatedUser = UserModel(
+      id: user.id,
+      username: user.username,
+      friends: user.friends.where((id) => id != friendId).toList(),
+      reviewIds: user.reviewIds,
+      avatar: user.avatar,
+      bio: user.bio,
+      topMovieIds: user.topMovieIds,
+    );
+    
+    _users[userIndex] = updatedUser;
+    return true;
+  }
+
+  // Create a new review
+  Future<ReviewModel> createReview({
+    required String userId,
+    required String movieId,
+    required int rating,
+    required String comment,
+  }) async {
+    // Generate a unique review ID
+    final reviewId = "rev${_reviews.length + 1}";
+    
+    final review = ReviewModel(
+      id: reviewId,
+      rating: rating,
+      comment: comment,
+      userId: userId,
+      movieId: movieId,
+      createdAt: DateTime.now(),
+    );
+    
+    _reviews.add(review);
+    
+    // Update user's reviewIds
+    final userIndex = _users.indexWhere((u) => u.id == userId);
+    if (userIndex != -1) {
+      final user = _users[userIndex];
+      final updatedUser = UserModel(
+        id: user.id,
+        username: user.username,
+        friends: user.friends,
+        reviewIds: [...user.reviewIds, reviewId],
+        avatar: user.avatar,
+        bio: user.bio,
+        topMovieIds: user.topMovieIds,
+      );
+      _users[userIndex] = updatedUser;
+    }
+    
+    return review;
+  }
+
+  // Add a movie to user's top movies
+  Future<bool> addTopMovie(String userId, String movieId) async {
+    final userIndex = _users.indexWhere((u) => u.id == userId);
+    if (userIndex == -1) return false;
+    
+    final user = _users[userIndex];
+    if (user.topMovieIds.contains(movieId)) return false; // Already in top movies
+    
+    // Create new user with added top movie
+    final updatedUser = UserModel(
+      id: user.id,
+      username: user.username,
+      friends: user.friends,
+      reviewIds: user.reviewIds,
+      avatar: user.avatar,
+      bio: user.bio,
+      topMovieIds: [...user.topMovieIds, movieId],
+    );
+    
+    _users[userIndex] = updatedUser;
+    return true;
+  }
+
+  // Remove a movie from user's top movies
+  Future<bool> removeTopMovie(String userId, String movieId) async {
+    final userIndex = _users.indexWhere((u) => u.id == userId);
+    if (userIndex == -1) return false;
+    
+    final user = _users[userIndex];
+    if (!user.topMovieIds.contains(movieId)) return false; // Not in top movies
+    
+    // Create new user with removed top movie
+    final updatedUser = UserModel(
+      id: user.id,
+      username: user.username,
+      friends: user.friends,
+      reviewIds: user.reviewIds,
+      avatar: user.avatar,
+      bio: user.bio,
+      topMovieIds: user.topMovieIds.where((id) => id != movieId).toList(),
+    );
+    
+    _users[userIndex] = updatedUser;
+    return true;
   }
 }
 

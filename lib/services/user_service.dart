@@ -26,5 +26,29 @@ class UserService {
     await Future.delayed(const Duration(milliseconds: 300));
     return _mockDataService.users;
   }
+
+  /// Add a friend to a user
+  Future<bool> addFriend(String userId, String friendId) async {
+    await Future.delayed(const Duration(milliseconds: 300));
+    return await _mockDataService.addFriend(userId, friendId);
+  }
+
+  /// Remove a friend from a user
+  Future<bool> removeFriend(String userId, String friendId) async {
+    await Future.delayed(const Duration(milliseconds: 300));
+    return await _mockDataService.removeFriend(userId, friendId);
+  }
+
+  /// Add a movie to user's top movies
+  Future<bool> addTopMovie(String userId, String movieId) async {
+    await Future.delayed(const Duration(milliseconds: 300));
+    return await _mockDataService.addTopMovie(userId, movieId);
+  }
+
+  /// Remove a movie from user's top movies
+  Future<bool> removeTopMovie(String userId, String movieId) async {
+    await Future.delayed(const Duration(milliseconds: 300));
+    return await _mockDataService.removeTopMovie(userId, movieId);
+  }
 }
 

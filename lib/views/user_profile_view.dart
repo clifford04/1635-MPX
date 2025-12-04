@@ -249,10 +249,10 @@ class _UserProfileViewState extends State<UserProfileView>
     return GridView.builder(
       padding: const EdgeInsets.all(16),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        childAspectRatio: 0.6,
-        crossAxisSpacing: 16,
-        mainAxisSpacing: 16,
+        crossAxisCount: 3, // Increased from 2 to 3 for smaller images
+        childAspectRatio: 0.55, // Adjusted for smaller images
+        crossAxisSpacing: 12,
+        mainAxisSpacing: 12,
       ),
       itemCount: viewModel.topMovies.length,
       itemBuilder: (context, index) {

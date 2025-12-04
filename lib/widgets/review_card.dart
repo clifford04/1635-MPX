@@ -129,20 +129,57 @@ class ReviewCard extends StatelessWidget {
                       tag: 'movie_poster_${review.movieId}',
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          reviewMovie.poster,
-                          width: 60,
-                          height: 90,
-                          fit: BoxFit.cover,
-                          errorBuilder: (context, error, stackTrace) {
-                            return Container(
-                              width: 60,
-                              height: 90,
-                              color: Colors.grey[300],
-                              child: const Icon(Icons.movie),
-                            );
-                          },
-                        ),
+                        child: reviewMovie.poster.isNotEmpty &&
+                                reviewMovie.poster.startsWith('http')
+                            ? Image.network(
+                                reviewMovie.poster,
+                                width: 60,
+                                height: 90,
+                                fit: BoxFit.cover,
+                                loadingBuilder: (context, child, loadingProgress) {
+                                  if (loadingProgress == null) return child;
+                                  return Container(
+                                    width: 60,
+                                    height: 90,
+                                    color: Colors.grey[300],
+                                    child: Center(
+                                      child: SizedBox(
+                                        width: 20,
+                                        height: 20,
+                                        child: CircularProgressIndicator(
+                                          strokeWidth: 2,
+                                          value: loadingProgress.expectedTotalBytes != null
+                                              ? loadingProgress.cumulativeBytesLoaded /
+                                                  loadingProgress.expectedTotalBytes!
+                                              : null,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                },
+                                errorBuilder: (context, error, stackTrace) {
+                                  return Container(
+                                    width: 60,
+                                    height: 90,
+                                    color: Colors.grey[300],
+                                    child: const Icon(Icons.movie, size: 30),
+                                  );
+                                },
+                              )
+                            : Image.asset(
+                                reviewMovie.poster,
+                                width: 60,
+                                height: 90,
+                                fit: BoxFit.cover,
+                                errorBuilder: (context, error, stackTrace) {
+                                  return Container(
+                                    width: 60,
+                                    height: 90,
+                                    color: Colors.grey[300],
+                                    child: const Icon(Icons.movie, size: 30),
+                                  );
+                                },
+                              ),
                       ),
                     ),
                     const SizedBox(width: 12),

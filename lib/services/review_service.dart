@@ -19,5 +19,21 @@ class ReviewService {
     await Future.delayed(const Duration(milliseconds: 300));
     return _mockDataService.getReviewsByMovieId(movieId);
   }
+
+  /// Create a new review
+  Future<ReviewModel> createReview({
+    required String userId,
+    required String movieId,
+    required int rating,
+    required String comment,
+  }) async {
+    await Future.delayed(const Duration(milliseconds: 300));
+    return await _mockDataService.createReview(
+      userId: userId,
+      movieId: movieId,
+      rating: rating,
+      comment: comment,
+    );
+  }
 }
 

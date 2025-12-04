@@ -85,20 +85,47 @@ class _MovieCardState extends State<MovieCard>
                   borderRadius:
                       const BorderRadius.vertical(top: Radius.circular(12)),
                   child: AspectRatio(
-                    aspectRatio: 2 / 3,
-                    child: Image.asset(
-                      widget.movie.poster,
-                      fit: BoxFit.cover,
-                      errorBuilder: (context, error, stackTrace) {
-                        return Container(
-                          color: Colors.grey[300],
-                          child: const Center(
-                            child:
-                                Icon(Icons.movie, size: 48, color: Colors.grey),
+                    aspectRatio: 3 / 4, // Changed from 2/3 to 3/4 for smaller images
+                    child: widget.movie.poster.isNotEmpty &&
+                            widget.movie.poster.startsWith('http')
+                        ? Image.network(
+                            widget.movie.poster,
+                            fit: BoxFit.cover,
+                            loadingBuilder: (context, child, loadingProgress) {
+                              if (loadingProgress == null) return child;
+                              return Container(
+                                color: Colors.grey[300],
+                                child: Center(
+                                  child: CircularProgressIndicator(
+                                    value: loadingProgress.expectedTotalBytes != null
+                                        ? loadingProgress.cumulativeBytesLoaded /
+                                            loadingProgress.expectedTotalBytes!
+                                        : null,
+                                  ),
+                                ),
+                              );
+                            },
+                            errorBuilder: (context, error, stackTrace) {
+                              return Container(
+                                color: Colors.grey[300],
+                                child: const Center(
+                                  child: Icon(Icons.movie, size: 48, color: Colors.grey),
+                                ),
+                              );
+                            },
+                          )
+                        : Image.asset(
+                            widget.movie.poster,
+                            fit: BoxFit.cover,
+                            errorBuilder: (context, error, stackTrace) {
+                              return Container(
+                                color: Colors.grey[300],
+                                child: const Center(
+                                  child: Icon(Icons.movie, size: 48, color: Colors.grey),
+                                ),
+                              );
+                            },
                           ),
-                        );
-                      },
-                    ),
                   ),
                 ),
               ),

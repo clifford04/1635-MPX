@@ -5,6 +5,7 @@ import '../widgets/movie_card.dart';
 import '../widgets/loading_widget.dart';
 import '../widgets/error_widget.dart' show ErrorStateWidget;
 import '../widgets/empty_widget.dart';
+import 'movie_detail_view.dart';
 
 /// Movie list view showing all available movies
 class MovieListView extends StatefulWidget {
@@ -113,10 +114,10 @@ class _MovieListViewState extends State<MovieListView> {
               child: GridView.builder(
                 padding: const EdgeInsets.all(16),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 0.6,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
+                  crossAxisCount: 3, // Increased from 2 to 3 for smaller images
+                  childAspectRatio: 0.55, // Adjusted for smaller images
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 12,
                 ),
                 itemCount: viewModel.movies.length,
                 itemBuilder: (context, index) {
@@ -127,11 +128,10 @@ class _MovieListViewState extends State<MovieListView> {
                     child: MovieCard(
                       movie: movie,
                       onTap: () {
-                        // Could navigate to movie detail page
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text('${movie.title} (${movie.year})'),
-                            duration: const Duration(seconds: 1),
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MovieDetailView(imdbID: movie.imdbID),
                           ),
                         );
                       },
