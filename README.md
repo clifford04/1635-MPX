@@ -65,9 +65,10 @@ https://youtu.be/ZWvK2mq8y2I
 
 ### Connor 
 self: Worked on the ideation of the app as well as devleoped the features beyond the initial design. Recorded the video. Helped to design the architecture of the app. helped with model and viewmodels. 
-(written by aza) peer: 
+
+(written by aza) peer: Connor came up with the initial idea for our project. He was able to fix a lot of issues that I was having trouble with which really helped. He also took point on recording the video while I had to work on other stuff, which was really nice. 
+
 ### Aza 
-self:
-(written by connor)peer: Heled to create the overall idea for the app, and the inital design of everything. Wrote most of the readme and test cases. Helped with design and viewmodel
+self: I mainly worked on designing the base features, like writing the Models and laying out the architecture of MVVM structure. I got basic functionality working which was then iterated on by Connor. As I took point on the MVVM structure, I wrote the diagram in the README as well. 
 
-
+(written by connor) peer: Heled to create the overall idea for the app, and the inital design of everything. Wrote most of the readme and test cases. Helped with design and viewmodel
