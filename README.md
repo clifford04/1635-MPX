@@ -27,10 +27,22 @@ Writing Reviews page
 
 the API we used was omdbapi, we used this API as a way to search for movies and movie details
 
+## Build Instructions and Dependencies
+
+## Instructions
+
+Run "Flutter doctor" in terminal to make sure eveything is working as expected
+
+Run "Flutter Run" in the terminal and choose Chrome as the enviorment, app will open a chrome tab
+Wait for applicaiton to load (may take several seconds)
+
+## Dependencies
+
+cupertino_icons
+http
+provider
 
 ## MVVM Diagram
-
-## Build Instructions and Dependencies
 
 ### Models
 We have four models in our project: 
@@ -56,6 +68,7 @@ We have four Views in our project:
 * movie_list
 * user_profile
 Each View is directly connected to a ViewModel from which it gets its information. The methods in each of their respective ViewModels are called in the View. None of the Views access data structures directly; only through ViewModel methods - a View is simply a widget tree. Most importantly, the Views are unable to change any state, only read them.
+
 ## Video Link
 
 https://youtu.be/ZWvK2mq8y2I
@@ -72,3 +85,4 @@ self: Worked on the ideation of the app as well as devleoped the features beyond
 self: I mainly worked on designing the base features, like writing the Models and laying out the architecture of MVVM structure. I got basic functionality working which was then iterated on by Connor. As I took point on the MVVM structure, I wrote the diagram in the README as well. 
 
 (written by connor) peer: Heled to create the overall idea for the app, and the inital design of everything. Wrote most of the readme and test cases. Helped with design and viewmodel
+
