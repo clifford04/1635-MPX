@@ -64,6 +64,10 @@ https://youtu.be/ZWvK2mq8y2I
 ## Self and Peer evaluations 
 
 ### Connor 
-
+self: Worked on the ideation of the app as well as devleoped the features beyond the initial design. Recorded the video. Helped to design the architecture of the app. helped with model and viewmodels. 
+(written by aza) peer: 
 ### Aza 
+self:
+(written by connor)peer: Heled to create the overall idea for the app, and the inital design of everything. Wrote most of the readme and test cases. Helped with design and viewmodel
+
 
